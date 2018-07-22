@@ -6,4 +6,9 @@
     Description: My own custom theme for my blog
     Version: 0.1 alpha
     Tags: simple, awesome
- */
+*/
+
+body {
+  background: gray;
+}
+

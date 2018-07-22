@@ -1,0 +1,27 @@
+{
+  "name": "customtheme",
+  "version": "1.0.0",
+  "description": "Readme file!",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node ./node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node ./node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node ./node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgm267/customtheme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rgm267/customtheme/issues"
+  },
+  "homepage": "https://github.com/rgm267/customtheme#readme",
+  "devDependencies": {
+    "laravel-mix": "^2.1.11",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
