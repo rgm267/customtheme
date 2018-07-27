@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/rgm267/customtheme#readme",
   "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "browser-sync-webpack-plugin": "^2.0.1",
     "laravel-mix": "^2.1.11",
     "webpack-dev-server": "^2.7.1"
   }

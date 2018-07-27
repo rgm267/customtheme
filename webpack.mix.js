@@ -11,7 +11,16 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.sass('assets/scss/app.scss', './style.css');
+mix
+    .sass('assets/scss/app.scss', 'dist/css/');
+
+mix
+    .browserSync({
+        'proxy': 'site.test',
+        files: [
+            'dist/css/{*,**/*}.css'
+        ]
+    });
 
 // Full API
 // mix.js(src, output);
