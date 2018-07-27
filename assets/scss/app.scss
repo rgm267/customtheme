@@ -1,18 +1,30 @@
-/*
-    Theme Name: Simple blog
-    Theme URI: http://www.rafaelmachado.pt
-    Author: Rafael G. Machado
-    Author URI: http://www.rafaelmachado.pt
-    Description: My own custom theme for my blog
-    Version: 0.1 alpha
-    Tags: simple, awesome
-*/
+@import '_variables.scss';
 
 body {
-  background: white;
+  background: $site-background;
+  font-family: $main-font-family;
+}
+
+a{
+  text-decoration: none;
+  color: $site-link-color;
 }
 
 /* GENERAL CLASSES */
+
+.text-right{
+  text-align: right;
+}
+
+.btn{
+  padding: 8px;
+  border:1px solid $site-link-color;
+  cursor: pointer;
+  &:hover{
+    background: $site-link-color;
+    color: white;
+  }
+}
 
 .container {
   width: 100%;
@@ -48,11 +60,27 @@ body {
 
 /* MENU */
 .menu {
+  display: -webkit-flex;
   display: flex;
+  padding: 8px;
 
   li {
     display: unset;
-    flex: 1;
     text-align: center;
+    margin-right: 30px;
+    text-transform: uppercase;
+    padding: 5px 20px 5px 20px;
+
+    &:first-child{
+      margin-right: auto;
+      border:1px solid $border-color;
+
+      &:hover{
+        background: $site-link-color;
+        a{
+          color: white;
+        }
+      }
+    }
   }
 }

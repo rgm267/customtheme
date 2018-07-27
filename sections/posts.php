@@ -7,7 +7,8 @@ if ( $posts_query->have_posts() ) {
     while ( $posts_query->have_posts() ) {
         $posts_query->the_post();
         echo '<li>' . get_the_title() . '</li>';
-        echo '<p>' . get_the_content() . '</p>';
+        echo '<p>' . get_the_excerpt() . '</p>';
+        echo '<p class="text-right"><a class="btn">Read more</a></p>';
     }
     echo '</ul>';
 
