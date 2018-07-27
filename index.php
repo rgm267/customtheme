@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
-<h1>This is the main page!</h1>
+<div class="container">
+    <?php include('sections/partials/primary-menu.php'); ?>
+
+    <?php include('sections/posts.php'); ?>
+</div>
 
 <?php get_footer(); ?>
