@@ -16,14 +16,23 @@ a{
   text-align: right;
 }
 
+%hover-button{
+  background: $site-link-color;
+  color: white;
+}
+
 .btn{
   padding: 8px;
   border:1px solid $site-link-color;
   cursor: pointer;
+
   &:hover{
-    background: $site-link-color;
-    color: white;
+    @extend %hover-button;
   }
+}
+
+.btn.active{
+  @extend %hover-button;
 }
 
 .container {
@@ -63,6 +72,7 @@ a{
   display: -webkit-flex;
   display: flex;
   padding: 8px;
+  border-bottom: 2px solid $border-color;
 
   li {
     display: unset;
@@ -81,6 +91,13 @@ a{
           color: white;
         }
       }
+    }
+  }
+
+  .brand{
+    background: $site-link-color;
+    a{
+      color: white;
     }
   }
 }

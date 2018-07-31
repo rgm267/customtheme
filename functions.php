@@ -3,12 +3,20 @@
 function custom_script_enqueue()
 {
     wp_enqueue_style('app-style', get_template_directory_uri() . '/dist/css/app.css', [], '1.0.0', 'all');
+
+    wp_enqueue_style('theme-styles', get_stylesheet_uri()); // This is where you enqueue your theme's main stylesheet
+    $custom_css = theme_get_customizer_css();
+    wp_add_inline_style('theme-styles', $custom_css);
 }
 
 function custom_theme_setup()
 {
     add_theme_support('menus');
     register_nav_menu('primary', 'Primary Header Navigation');
+
+    /* admin panel */
+    if (is_user_logged_in())
+        show_admin_bar(true);
 }
 
 function theme_customize_register($wp_customize)
@@ -77,17 +85,8 @@ function theme_get_customizer_css()
     return $css;
 }
 
-function theme_enqueue_styles()
-{
-    wp_enqueue_style('theme-styles', get_stylesheet_uri()); // This is where you enqueue your theme's main stylesheet
-    $custom_css = theme_get_customizer_css();
-    wp_add_inline_style('theme-styles', $custom_css);
-}
-
 add_action('wp_enqueue_scripts', 'custom_script_enqueue');
 
 add_action('init', 'custom_theme_setup');
 
 add_action('customize_register', 'theme_customize_register');
-
-add_action('wp_enqueue_scripts', 'theme_enqueue_styles');

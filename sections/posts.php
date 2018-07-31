@@ -1,18 +1,18 @@
-<?php
-
-$posts_query = new WP_Query( array( 'post_type' => 'post','posts_per_page' => -1 ) );
-
-if ( $posts_query->have_posts() ) {
-    echo '<ul>';
-    while ( $posts_query->have_posts() ) {
-        $posts_query->the_post();
-        echo '<li>' . get_the_title() . '</li>';
-        echo '<p>' . get_the_excerpt() . '</p>';
-        echo '<p class="text-right"><a class="btn">Read more</a></p>';
-    }
-    echo '</ul>';
-
-    /* Restore original Post Data */
-    wp_reset_postdata();
-
-}
+<?php 
+	
+	if( have_posts() ):
+		
+		while( have_posts() ): the_post(); ?>
+		
+			<h3><?php the_title(); ?></h3>
+			<small>Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?>, in <?php the_category(); ?></small>
+			
+			<p><?php the_content(); ?></p>
+			
+			<hr>
+		
+		<?php endwhile;
+		
+	endif;
+			
+?>
