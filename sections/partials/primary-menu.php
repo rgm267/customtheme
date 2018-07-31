@@ -10,7 +10,7 @@ if ($menu_ID)
 if ($menu_items) {
     ?>
     <div id="primary-menu" class="menu">
-        <li><a href="/"><?php print get_bloginfo(); ?></a></li>
+        <li class="brand"><a href="/"><?php print get_bloginfo(); ?></a></li>
         <?php
         foreach ($menu_items as $navItem)
             echo '<li><a href="' . $navItem->url . '" title="' . $navItem->title . '">' . $navItem->title . '</a></li>';

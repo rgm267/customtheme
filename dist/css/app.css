@@ -14,15 +14,16 @@ a {
   text-align: right;
 }
 
+.btn:hover,
+.btn.active {
+  background: #111;
+  color: white;
+}
+
 .btn {
   padding: 8px;
   border: 1px solid #111;
   cursor: pointer;
-}
-
-.btn:hover {
-  background: #111;
-  color: white;
 }
 
 .container {
@@ -64,6 +65,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   padding: 8px;
+  border-bottom: 2px solid #666;
 }
 
 .menu li {
@@ -84,6 +86,14 @@ a {
 }
 
 .menu li:first-child:hover a {
+  color: white;
+}
+
+.menu .brand {
+  background: #111;
+}
+
+.menu .brand a {
   color: white;
 }
 
